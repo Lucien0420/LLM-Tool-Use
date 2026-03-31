@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.local
+
+# Large local data and logs (see README)
+data/*
+!data/.gitkeep
+logs/*
+!logs/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Generated CLI outputs
+output/*
+!output/.gitkeep
+out.csv
+out_from.csv
+result.json
+
+# Tests and tooling
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
