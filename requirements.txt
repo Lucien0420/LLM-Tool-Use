@@ -1,4 +1,4 @@
-# 與 pyproject.toml 對齊；可改用: pip install -e .
+# Kept in sync with pyproject.toml; prefer: pip install -e .
 pydantic>=2.0
 pydantic-settings>=2.0
 httpx>=0.27

@@ -1,6 +1,6 @@
 # Inquiry Mail Extractor (LLM + Pydantic)
 
-[![CI](https://github.com/Lucien0420/LLM-Tool-Use/actions/workflows/ci.yml/badge.svg)](https://github.com/Lucien0420/LLM-Tool-Use/actions/workflows/ci.yml)
+[![CI](https://github.com/Lucien0420/LLM-Tool-Use/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Lucien0420/LLM-Tool-Use/actions/workflows/ci.yml)
 
 **Repository:** [github.com/Lucien0420/LLM-Tool-Use](https://github.com/Lucien0420/LLM-Tool-Use)
 
@@ -86,13 +86,16 @@ python scripts/csv_extract.py -i samples/inquiries.csv -o output/from_csv.csv
 
 Use `--limit N` on `csv_extract.py` for partial runs. Regenerate sample CSV: `python scripts/generate_inquiries_sample.py -n 50 -o samples/inquiries.csv`.
 
-### 4. Screenshots (optional)
+### 4. Visual example (input → output)
 
-Example pipeline output: **Google Sheets** after opening a generated CSV (structured columns), and the same kind of file in a **text editor** (raw rows with quoted `body` fields).
+Order follows the **pipeline**: what you feed in, then what you get after `csv_extract`.
 
-![CSV opened in Google Sheets — extracted columns](docs/screenshots/out.png)
+1. **Input** — **`samples/inquiries.csv`** in a **text editor**: columns `id` and `body` (raw inquiry text). This is the `-i` file for `scripts/csv_extract.py`.
+2. **Output** — Result written by `csv_extract` (e.g. `output/from_csv.csv`) opened in **Google Sheets**: extracted fields such as `customer_name`, `contact`, `estimated_budget`.
 
-![Raw CSV in an editor — includes original body column](docs/screenshots/incsv.png)
+![Input sample `samples/inquiries.csv` in an editor (`id`, `body`)](docs/screenshots/input-inquiries.png)
+
+![Pipeline output in Google Sheets](docs/screenshots/out.png)
 
 ### 5. Unit tests
 
@@ -130,7 +133,7 @@ On push or pull request to `main` / `master`, `.github/workflows/ci.yml` runs **
 │   ├── services/     # extraction, batch CSV, CSV pipeline
 │   └── utils/
 ├── docs/
-│   └── screenshots/  # README demo images (optional)
+│   └── screenshots/  # README visual examples (input / output PNGs)
 ├── samples/          # example .txt and inquiries.csv
 ├── scripts/          # CLI entry points, sample generators
 ├── output/           # suggested folder for generated CSV/JSON (contents gitignored)
